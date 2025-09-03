@@ -1,0 +1,43 @@
+/* Background.css */
+
+/* پس‌زمینه کلی */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* متن بزرگ پشت صحنه */
+#bg-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d; /* فعال کردن 3D */
+  font-size: 280px;
+  font-weight: bold;
+  color: rgba(0, 255, 150, 0.15);
+  letter-spacing: 12px;
+  pointer-events: none;
+  text-align: center;
+  white-space: nowrap;
+  z-index: -1;
+  user-select: none;
+  transform: translate(-50%, -50%) translateZ(0);
+}
+
+/* لایه پشت متن با جابجایی متغیر */
+#bg-text::before {
+  content: "Ali AI";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgba(0, 255, 150, 0.05);
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+  transition: transform 0.2s ease-out;
+  transform: translate(var(--tx, 0), var(--ty, 0));
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ali AI - Download</title>
+  <link rel="stylesheet" href="Background.css"> <!-- بک‌گراند -->
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+      background-color: #000;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    section.hidden {
+      opacity: 0;
+      transform: translateY(50px);
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    h1, h2, p {
+      margin: 10px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .download-btn {
+      margin: 15px;
+      padding: 15px 40px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #000;
+      background: #00ff99;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .download-btn:hover {
+      transform: scale(1.1);
+      background: #00cc77;
+    }
+
+    .next-btn {
+      margin-top: 40px;
+      padding: 12px 36px;
+      font-size: 16px;
+      background: #555;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .next-btn:hover {
+      background: #777;
+    }
+  </style>
+</head>
+<body>
+  <!-- متن بک‌گراند -->
+  <div id="bg-text">Ali AI</div>
+
+  <!-- بخش اول -->
+  <section id="section1">
+    <h1>This is Ali AI, a minimal version of AI</h1>
+    <p>Kowxp create this AI version to chat</p>
+    <p>To download this AI click This Tab</p>
+
+    <a href="AliAI_setup.exe" download>
+      <button class="download-btn">Download version 2<br>Last version</button>
+    </a>
+
+    <button class="next-btn" id="nextBtn">Next Page</button>
+  </section>
+
+  <!-- بخش دوم -->
+<section id="section2" class="hidden">
+  <h2>Ali AI - Version 1 (Not Supported)</h2>
+  <p>This is version 1 of Ali AI. Version 1 was not supported.<br>
+     If you really sure to download version 1 tap this download button:</p>
+  <a href="Ali AI V1.002.rar" download>
+    <button class="download-btn">Download version 1</button>
+  </a>
+
+  <div id="version1-text" class="version-text" style="margin-top: 20px; max-width: 600px; margin-left: auto; margin-right: auto; color: white; font-size: 16px; text-align: center;">
+    <p>If download version 1 drop the file into this location <code>D:\AI\Ali AI V1.002</code></p>
+    <p>if you don't do this your app was broke if you not have this folders create it Thanks 🙏</p>
+    <p>We almost helping you to work with Ali AI</p>
+  </div>
+
+  <button class="next-btn" id="backBtn">Back to Page 1</button>
+</section>
+
+
+  <!-- اسکریپت بک‌گراند -->
+  <script src="Background_helper.js"></script>
+
+  <script>
+    // مدیریت نمایش بخش‌ها
+    const section1 = document.getElementById("section1");
+    const section2 = document.getElementById("section2");
+    const nextBtn = document.getElementById("nextBtn");
+    const backBtn = document.getElementById("backBtn");
+
+    nextBtn.addEventListener("click", () => {
+      section1.classList.add("hidden");
+      section2.classList.remove("hidden");
+    });
+
+    backBtn.addEventListener("click", () => {
+      section2.classList.add("hidden");
+      section1.classList.remove("hidden");
+    });
+  </script>
+</body>
+</html>
